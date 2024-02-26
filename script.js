@@ -3,6 +3,19 @@ const buttonNext = document.querySelector('.work__button-next');
 const buttonPrev = document.querySelector('.work__button-prev');
 const sliderLine = document.querySelectorAll('.work__item');
 const itemPoint = document.querySelectorAll(".item-point");
+const menuLink = document.querySelectorAll('.menu__link');
+
+const removeMenuActive = () => {
+    menuLink.forEach(function (i) {
+        i.classList.remove('menu__link--active')
+    })
+}
+menuLink.forEach(function (i) {
+    i.addEventListener('click', function () {
+        removeMenuActive();
+        i.classList.add('menu__link--active')
+    })
+})
 
 buttonNext.addEventListener('click', function () {
     offset += 390;
@@ -65,6 +78,8 @@ window.addEventListener("resize", function () {
         offset = 0;
     }
 })
+
+document.getElementById("year").innerHTML = new Date().getFullYear();
 
 
 
