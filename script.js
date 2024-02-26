@@ -53,9 +53,18 @@ itemPoint.forEach(function (i) {
     })
 });
 
-if (document.documentElement.clientWidth < 1200){
-    console.log("Hello world")
-}
+window.addEventListener("resize", function () {
+    if (screen.width <= 1200) {
+        sliderLine.forEach(function (i) {
+            i.style.right = 0 + "px"
+        })
+        removeAllActive();
+        itemPoint.forEach(i => i.classList.contains('item-point1') ? i.classList.add('item-point--active') : false)
+        buttonPrev.style.display = 'none';
+        buttonNext.style.display = 'block';
+        offset = 0;
+    }
+})
 
 
 
