@@ -4,6 +4,11 @@ const buttonPrev = document.querySelector('.work__button-prev');
 const sliderLine = document.querySelectorAll('.work__item');
 const itemPoint = document.querySelectorAll(".item-point");
 const menuLink = document.querySelectorAll('.menu__link');
+const menuBtn = document.querySelector('.menu__btn');
+const menuList = document.querySelector('.menu__list-adaptive');
+const navMenu = document.querySelector('.menu__mobile');
+const body = document.body;
+const telBtn = document.querySelectorAll('.tel-button');
 
 const removeMenuActive = () => {
     menuLink.forEach(function (i) {
@@ -67,7 +72,7 @@ itemPoint.forEach(function (i) {
 });
 
 window.addEventListener("resize", function () {
-    if (screen.width <= 1200) {
+    if (window.innerWidth <= 1200) {
         sliderLine.forEach(function (i) {
             i.style.right = 0 + "px"
         })
@@ -77,9 +82,49 @@ window.addEventListener("resize", function () {
         buttonNext.style.display = 'block';
         offset = 0;
     }
+
+    if (window.innerWidth > 1024) {
+        navMenu.style.display = 'none';
+        menuList.style.display = 'flex';
+        menuBtn.classList.remove('menu__btn--active')
+        body.style.overflowY = 'visible'
+    }
+
+    if (window.innerWidth <= 1024) {
+        menuList.style.display = 'none'
+        navMenu.style.display = 'none'
+        menuBtn.classList.remove('menu__btn--active')
+        body.style.overflowY = 'visible'
+    }
+
+    if (window.innerWidth >= 800) {
+        document.querySelector('.work__items').scrollLeft = document.documentElement.scrollLeft = 0;
+    }
+})
+
+menuBtn.addEventListener('click', function () {
+    menuBtn.classList.toggle('menu__btn--active');
+    if (menuBtn.disabled) {
+        return
+    }
+    menuBtn.disabled = true;
+    setTimeout(() => {
+        menuBtn.disabled = false;
+        menuBtn.classList.remove("disabled")
+    }, 200);
+    if (menuBtn.classList.contains('menu__btn--active')) {
+        setTimeout(() => menuList.style.display = 'flex', 200);
+        navMenu.style.display = 'block';
+        body.style.overflow = 'hidden';
+    } else {
+        menuList.style.display = 'none';
+        navMenu.style.display = 'none';
+        body.style.overflowY = 'visible'
+    }
 })
 
 document.getElementById("year").innerHTML = new Date().getFullYear();
+
 
 
 
