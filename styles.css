@@ -12,11 +12,12 @@ body, html {
     font-family: 'Roboto', sans-serif;;
     background: #fbfbfb;
     min-width: 320px;
-}
-
-body {
     overflow-x: hidden;
 }
+
+/*body {*/
+/*    overflow-x: hidden;*/
+/*}*/
 
 a {
     text-decoration: none;
