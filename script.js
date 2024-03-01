@@ -9,6 +9,7 @@ const menuList = document.querySelector('.menu__list-adaptive');
 const navMenu = document.querySelector('.menu__mobile');
 const body = document.body;
 const telBtn = document.querySelectorAll('.tel-button');
+const callForm = document.querySelector('.call-form')
 
 const removeMenuActive = () => {
     menuLink.forEach(function (i) {
@@ -123,6 +124,9 @@ menuBtn.addEventListener('click', function () {
     }
 })
 
+telBtn.forEach(i => i.addEventListener('click', function (){
+    alert('hell')
+}))
 document.getElementById("year").innerHTML = new Date().getFullYear();
 
 
