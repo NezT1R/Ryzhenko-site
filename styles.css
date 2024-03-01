@@ -12,11 +12,15 @@ body, html {
     font-family: 'Roboto', sans-serif;;
     background: #fbfbfb;
     min-width: 320px;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+.html--active{
     overflow-x: hidden;
 }
 
 body{
-
+    overflow-x: hidden;
 }
 
 a {
@@ -251,6 +255,7 @@ h2 {
 
 .header__content-inner {
     align-self: flex-end;
+    margin-bottom: 370px; /* without buttons */
 }
 
 .header__content-name {
@@ -306,6 +311,7 @@ h2 {
 .about__items {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 100px;    /* without buttons */
 }
 
 .about__item {
@@ -331,6 +337,7 @@ h2 {
     gap: 0 20px;
     width: 1170px;
     overflow: hidden;
+    margin-bottom: 110px; /*without buttons */
 }
 
 .work__item {
@@ -369,7 +376,7 @@ h2 {
 }
 
 .work__button-prev {
-    top: -220px;
+    top: -340px;
     left: -2%;
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
     z-index: 1;
@@ -379,7 +386,7 @@ h2 {
 .work__button-next {
     transform: rotate(180deg);
     right: 0;
-    top: -220px;
+    top: -340px;
     filter: drop-shadow(5px -5px 5px rgba(0, 0, 0, 0.3));
 }
 
@@ -509,7 +516,7 @@ h2 {
     width: 120px;
     justify-content: space-between;
     margin: 0 auto;
-    padding-top: 100px;
+    padding: 100px 0 80px 0;
     display: none;
 }
 
@@ -770,6 +777,7 @@ h2 {
     .work__items {
         overflow-x: scroll;
         padding-right: 200px;
+        margin-bottom: 100px;
     }
 
     .work__items::-webkit-scrollbar {

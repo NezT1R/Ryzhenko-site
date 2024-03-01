@@ -1,4 +1,4 @@
-let offset = 0;
+const body = document.body;
 const buttonNext = document.querySelector('.work__button-next');
 const buttonPrev = document.querySelector('.work__button-prev');
 const sliderLine = document.querySelectorAll('.work__item');
@@ -7,9 +7,10 @@ const menuLink = document.querySelectorAll('.menu__link');
 const menuBtn = document.querySelector('.menu__btn');
 const menuList = document.querySelector('.menu__list-adaptive');
 const navMenu = document.querySelector('.menu__mobile');
-const body = document.body;
+const menuItem = document.querySelectorAll('.menu__item')
 const telBtn = document.querySelectorAll('.tel-button');
 const callForm = document.querySelector('.call-form')
+let offset = 0;
 
 const removeMenuActive = () => {
     menuLink.forEach(function (i) {
@@ -117,14 +118,25 @@ menuBtn.addEventListener('click', function () {
         setTimeout(() => menuList.style.display = 'flex', 200);
         navMenu.style.display = 'block';
         body.style.overflow = 'hidden';
+        document.querySelector('.html').classList.remove('html--active')
     } else {
         menuList.style.display = 'none';
         navMenu.style.display = 'none';
         body.style.overflowY = 'visible'
+        document.querySelector('.html').classList.add('html--active')
     }
 })
+menuItem.forEach(i => i.addEventListener('click', function () {
+    if (window.innerWidth <= 1024) {
+        menuBtn.classList.remove('menu__btn--active');
+        navMenu.style.display = 'none';
+        menuList.style.display = 'none'
+        body.style.overflowY = 'visible'
+        document.querySelector('.html').classList.add('html--active')
+    }
+}))
 
-telBtn.forEach(i => i.addEventListener('click', function (){
+telBtn.forEach(i => i.addEventListener('click', function () {
     alert('hell')
 }))
 document.getElementById("year").innerHTML = new Date().getFullYear();
