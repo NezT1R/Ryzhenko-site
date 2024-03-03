@@ -15,11 +15,12 @@ body, html {
     width: 100%;
     scroll-behavior: smooth;
 }
-.html--active{
+
+.html--active {
     overflow-x: hidden;
 }
 
-body{
+body {
     overflow-x: hidden;
 }
 
@@ -28,13 +29,69 @@ a {
     color: inherit;
 }
 
-.call-form{
+.call__bg {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
-    z-index: 10;
-    position: absolute;
+    z-index: 9999;
+    position: fixed;
     display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.call__form {
+    background-color: white;
+    max-width: 500px;
+    height: 600px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.call__container{
+    padding: 0 20px;
+}
+
+.call__img{
+    text-align: center;
+    padding-top: 40px;
+}
+
+.call_img-me{
+    width: 200px;
+    border-radius: 100%;
+}
+
+.call__text{
+    width: 300px;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+.call__input{
+    width: 200px;
+    height: 30px;
+    margin: 30px auto 0;
+}
+
+.call__input-tel{
+    width: 200px;
+    height: 30px;
+}
+
+.call__btn{
+    margin: 40px auto 0;
+    width: 200px;
+}
+.call__btn-submit{
+    background-color: #ff3768;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    width: 200px;
+    height: 30px;
+    font-size: 18px;
+
 }
 
 .header {
@@ -311,7 +368,7 @@ h2 {
 .about__items {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 100px;    /* without buttons */
+    padding-bottom: 100px; /* without buttons */
 }
 
 .about__item {
@@ -891,11 +948,13 @@ h2 {
     .menu__btn--active .bar:nth-child(3) {
         transform: translateY(-10px) rotate(-45deg);
     }
-    .menu__mobile{
+
+    .menu__mobile {
         margin-top: 80px;
         height: 175px;
     }
-    .menu__list-adaptive{
+
+    .menu__list-adaptive {
         top: 155px;
         padding: 0 50px;
     }
@@ -1013,7 +1072,8 @@ h2 {
     .header__decoration-secondTrait {
         display: none;
     }
-    .menu__list-adaptive{
+
+    .menu__list-adaptive {
         flex-direction: column;
         padding: 0;
         gap: 20px 0;
@@ -1021,10 +1081,12 @@ h2 {
         justify-content: center;
         align-items: center;
     }
-    .menu__item{
+
+    .menu__item {
         font-size: 18px;
     }
-    .menu__mobile{
+
+    .menu__mobile {
         margin-top: 69px;
     }
 }

@@ -9,7 +9,8 @@ const menuList = document.querySelector('.menu__list-adaptive');
 const navMenu = document.querySelector('.menu__mobile');
 const menuItem = document.querySelectorAll('.menu__item')
 const telBtn = document.querySelectorAll('.tel-button');
-const callForm = document.querySelector('.call-form')
+const callBg = document.querySelector('.call__bg');
+const callForm = document.querySelector('.call__form')
 let offset = 0;
 
 const removeMenuActive = () => {
@@ -137,8 +138,21 @@ menuItem.forEach(i => i.addEventListener('click', function () {
 }))
 
 telBtn.forEach(i => i.addEventListener('click', function () {
-    alert('hell')
-}))
+    callBg.style.display = 'flex';
+    setTimeout(function () {
+        callForm.style.opacity = '1';
+    }, 100);
+    // document.addEventListener('click', function (){
+    //     callBg.style.display = 'none';
+    //     callForm.style.opacity = '0';
+    // })
+}));
+callBg.addEventListener('click', function (event) {
+    if (event.target === this) {
+        this.style.display = 'none';
+        callForm.style.opacity = '0';
+    }
+});
 document.getElementById("year").innerHTML = new Date().getFullYear();
 
 
