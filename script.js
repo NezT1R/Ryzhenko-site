@@ -155,6 +155,8 @@ callBg.addEventListener('click', function (event) {
 });
 document.getElementById("year").innerHTML = new Date().getFullYear();
 
+let element = document.querySelector('.call__input-tel');
+
 
 
 

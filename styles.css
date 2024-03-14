@@ -86,11 +86,11 @@ a {
 .call__btn-submit{
     background-color: #ff3768;
     border: none;
-    border-radius: 30px;
+    border-radius: 20px;
     color: white;
     width: 200px;
-    height: 30px;
-    font-size: 18px;
+    height: 50px;
+    font-size: 20px;
 
 }
 
